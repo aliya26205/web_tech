@@ -1,0 +1,109 @@
+<!-- Demonstrate stack applications using JavaScript. -->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title> Stack Application</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+        input, button {
+            margin: 5px;
+        }
+        .box {
+            border: 1px solid black;
+            padding: 15px;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Stack Application – Student Data</h2>
+
+<script>
+    // Stack Class
+    class Stack {
+        constructor() {
+            this.items = [];
+        }
+
+        push(student) {
+            this.items.push(student);
+        }
+
+        pop() {
+            if (this.items.length === 0) {
+                return null;
+            }
+            return this.items.pop();
+        }
+
+        isEmpty() {
+            return this.items.length === 0;
+        }
+
+        display() {
+            return this.items;
+        }
+    }
+</script>
+
+<div class="box">
+    <h3>Enter Student Details</h3>
+
+    <input type="text" id="sid" placeholder="Student ID"><br>
+    <input type="text" id="sname" placeholder="Student Name"><br>
+
+    <button onclick="pushStudent()">Push</button>
+    <button onclick="popStudent()">Pop</button>
+
+    <h4>Stack Contents (LIFO)</h4>
+    <ul id="stackView"></ul>
+</div>
+
+<script>
+    let studentStack = new Stack();
+
+    function pushStudent() {
+        let id = document.getElementById("sid").value;
+        let name = document.getElementById("sname").value;
+
+        if (id === "" || name === "") {
+            alert("Enter all student details");
+            return;
+        }
+
+        studentStack.push({ id, name });
+
+        document.getElementById("sid").value = "";
+        document.getElementById("sname").value = "";
+
+        displayStack();
+    }
+
+    function popStudent() {
+        if (studentStack.isEmpty()) {
+            alert("Stack Underflow");
+            return;
+        }
+        studentStack.pop();
+        displayStack();
+    }
+
+    function displayStack() {
+        let list = document.getElementById("stackView");
+        list.innerHTML = "";
+
+        studentStack.display().forEach((student, index) => {
+            let li = document.createElement("li");
+            li.textContent =
+                "ID: " + student.id + ", Name: " + student.name;
+            list.appendChild(li);
+        });
+    }
+</script>
+
+</body>
+</html>

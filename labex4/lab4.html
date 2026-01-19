@@ -1,0 +1,34 @@
+<!-- Demonstrate applications of recursion in JavaScript. -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculation</title>
+</head>
+<body>
+    <h1>Factorial Calculation</h1>
+
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" name="number" min="0">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <p id="result"></p>
+
+    <script>
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+
+        function calculateFactorial() {
+            var number = parseInt(document.getElementById("number").value);
+            var result = factorial(number);
+            document.getElementById("result").innerText = "Factorial of " + number + " is: " + result;
+        }
+    </script>
+</body>
+</html>

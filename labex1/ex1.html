@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admission Form</title>
+        <link rel="stylesheet" href="ex1.css">
+    </head>
+    <body>
+        <header>
+             <h2>St Joseph Engineering College, Mangalore</h2><br>
+             <h4>Department of MCA -Admission Form</h4>
+        </header>
+        <main>
+            <form>
+                <fieldset>  
+                    <legend>Student Information</legend>
+                    <label>Full Name:</label><br>
+                    <input type="text" placeholder="Enter your name" required><br>
+                    <label>Date of Birth:</label><br>
+                    <input type="date" required><br>
+                    <label>Gender:</label><br>
+                    <select required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    </select><br>
+                    <label>Email ID:</label><br>
+                    <input type="email" placeholder="example@gmail.com" required><br>
+                    <label>Mobile Number:</label><br>
+                    <input type="tel" pattern="[0-9]{10}" title="Enter 10-digit number"><br>
+                    <label>Address:</label><br>
+                    <textarea style=" width: 97%;" required></textarea><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Academic Information</legend>
+                    <label>Undergraduate Course:</label><br>
+                    <input type="text" placeholder="e.g. ,BCA,Bsc,BCom" required><br>
+                    <label>Percentage/CGPA:</label><br>
+                    <input type="number" required><br>
+                    <label>Name of Collage:</label><br>
+                    <input type="text" required><br>
+                    <label>Year of Passing:</label><br>
+                    <input type="number" required><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Upload Documents</legend>
+                    <label>Upload Passport Size Photo:</label><br>
+                    <input type="file" required><br>
+                    <label>Upload Marksheet:</label><br>
+                    <input type="file" required><br>
+                </fieldset>
+                <div class="button-container">
+                  <button type="submit">Submit</button>
+                  <button type="reset">Reset</button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

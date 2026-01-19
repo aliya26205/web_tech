@@ -1,0 +1,91 @@
+<!-- Develop and demonstrate using push/pop and shift/unshift operations in jquery -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Manipulation using jQuery</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #arrayDisplay {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Array Manipulation using jQuery</h2>
+
+<input type="text" id="txtValue" placeholder="Enter element">
+<br><br>
+
+<button id="pushBtn">Push</button>
+<button id="popBtn">Pop</button>
+<button id="shiftBtn">Shift</button>
+<button id="unshiftBtn">Unshift</button>
+
+<div id="arrayDisplay">Array is empty</div>
+
+<script>
+$(document).ready(function(){
+
+    // Empty array
+    var myArray = [];
+
+    function displayArray() {
+        if(myArray.length === 0){
+            $("#arrayDisplay").text("Array is empty");
+        } else {
+            $("#arrayDisplay").text("Array: " + myArray.join(", "));
+        }
+    }
+
+    // PUSH
+    $("#pushBtn").click(function(){
+        var value = $("#txtValue").val();
+        if(value !== ""){
+            myArray.push(value);
+            $("#txtValue").val("");
+            displayArray();
+        }
+    });
+
+    // POP
+    $("#popBtn").click(function(){
+        if(myArray.length > 0){
+            myArray.pop();
+            displayArray();
+        }
+    });
+
+    // SHIFT
+    $("#shiftBtn").click(function(){
+        if(myArray.length > 0){
+            myArray.shift();
+            displayArray();
+        }
+    });
+
+    // UNSHIFT
+    $("#unshiftBtn").click(function(){
+        var value = $("#txtValue").val();
+        if(value !== ""){
+            myArray.unshift(value);
+            $("#txtValue").val("");
+            displayArray();
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>
