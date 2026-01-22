@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    <style>
+        div {
+            padding: 0 80px;
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 800px;
+            position: absolute;
+        }
+        div:hover{
+            transform:scale(1.25);
+        }
+
+        #one {
+            background-color: rgb(127, 229, 255);
+            top: 20%;
+            left: 20%;
+        }
+
+        /* #one:hover,
+        #two:hover,
+        #three:hover */
+        /* {
+            z-index: 1;
+            background-color: aquamarine;
+        } */
+
+        #two{
+            background-color: rgb(215, 224, 250);
+            top: 30%;
+            left: 30%;
+        }
+
+        #three{
+            background-color: rgb(167, 187, 252);
+            top: 40%;
+            left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var toplayer = "three";
+        function Moveit(Totop) {
+            var oldtop = document.getElementById(toplayer).style;
+            var newtop = document.getElementById(Totop).style;
+            oldtop.zIndex = "10";
+            newtop.zIndex = "90";
+            toplayer = document.getElementById(Totop).id;
+        }
+    </script>
+        <h1><b>Stacking</b></h1>
+    <div id="one" onmouseover="Moveit('one')">
+        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Quas earum quibusdam amet laborum quia excepturi, cupiditate
+            voluptate praesentium eos dolores! Dolor sunt perspiciatis,
+            consequuntur beatae cumque quis earum illum reiciendis.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            At magnam eveniet molestiae
+        </p>
+    </div>
+    
+    <div id="two" onmouseover="Moveit('two')">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quos vel saepe tenetur deleniti, id perspiciatis consequuntur officia nobis,
+            aliquam dolore dolor quae?
+            Dolor id tempore ratione nulla praesentium repellendus similique?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex blanditiis
+            facilis illum nihil
+        </p>
+    </div>
+    
+    <div id="three" onmouseover="Moveit('three')">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Dolore cum aperiam molestias praesentium deleniti sit asperiores
+            modi labore sequi nisi atque quae,
+            iusto id, nobis nam aspernatur vitae nostrum beatae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+</body>
+
+</html>
