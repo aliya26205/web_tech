@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admission form</title>
+</head>
+<body>
+<form method="POST" action="lab2.php">
+	<h1>Admision form</h1>
+	<table border="1">
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="name" required></td>
+		</tr>
+		<tr>
+			<td>fathername:</td>
+			<td><input type="text" name="fname" required></td>
+		</tr>
+		<tr>
+			<td>gender:</td>
+			<td><select name="gender" required>
+				<option value="male">male</option>
+				<option value="female">female</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>Adress:</td>
+			<td><textarea name="add" required></textarea></td>
+		</tr>
+		<tr>
+			<td>DOB:</td>
+			<td><input type="date" name="dob" required></td>
+		</tr>
+		<tr>
+			<td>moblieno:</td>
+			<td><input type="text" name="mob" pattern="[0-9]{10}" required></td>
+		</tr>
+		<tr>
+			<td>course:</td>
+			<td><input type="radio" name="course" value="bca" required>bca<br>
+				<input type="radio" name="course" value="bba" required>bba<br>
+				<input type="radio" name="course" value="bcom" required>bcom<br>
+				<input type="radio" name="course" value="ba" required>ba</td>
+		</tr>
+		<tr>
+			<td>total %:</td>
+			<td><input type="text" name="total" required></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;"><input type="submit" name="submit" required></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

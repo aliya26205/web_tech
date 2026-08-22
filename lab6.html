@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>election</title>
+</head>
+<body>
+	<form method="POST" action="lab6.php">
+<h1>election</h1>
+	<table border="1">
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="name" required></td>
+		</tr>
+		<tr>
+			<td>fathername:</td>
+			<td><input type="text" name="fname" required></td>
+		</tr>
+		<tr>
+			<td>gender:</td>
+			<td><select name="gender" required>
+				<option value="male">male</option>
+				<option value="female">female</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>DOB:</td>
+			<td><input type="date" name="dob" required></td>
+		</tr>
+		<tr>
+			<td>Img:</td>
+			<td><input type="file" name="img"> </td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;"><input type="submit" name="submit" required></td>
+		</tr>
+</body>
+</html>
